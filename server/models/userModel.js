@@ -15,9 +15,14 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    bought: [
+        {
+            type: String
+        }
+    ],
     inBucket: [
         {
-            type: Number
+            type: String
         }
     ]
 });

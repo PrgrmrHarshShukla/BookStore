@@ -2,6 +2,7 @@ const express = require('express');
 const app = express()
 const cors = require('cors');
 const userRoutes = require('./routes/userRoutes')
+const bookRoutes = require('./routes/bookRoutes')
 const mongoose = require('mongoose');
 require('dotenv').config();
 
@@ -31,6 +32,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
 app.use('/users', userRoutes)
+app.use('/books', bookRoutes)
 
 app.use((err, req, res, next) => {
     res.status(500).json({

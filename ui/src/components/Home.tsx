@@ -1,9 +1,10 @@
+import Header from "./Header"
 
 
 function Home() {
   return (
     <div className="text-7xl">
-      Home
+      <Header />
     </div>
   )
 }

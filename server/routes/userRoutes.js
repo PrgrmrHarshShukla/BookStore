@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Users = require('../models/userModel')
 
-
+// Gets all users
 router.get('/', async (req, res) => {
     try {
         const users = await Users.find();
@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
     }
 })
 
-
+// Gets a user
 router.get('/:email', async (req, res) => {
     try {
         const user = await Users.findOne({ email: req.params.email });
@@ -38,7 +38,7 @@ router.get('/:email', async (req, res) => {
     }
 })
 
-
+// Registers a user
 router.post('/register', async (req, res) => {
     try {
         const user = new Users({
@@ -68,7 +68,7 @@ router.post('/register', async (req, res) => {
     }
 })
 
-
+// Deletes book from basket
 router.patch('/deleteFromBasket/:email', async (req, res) => {
     try {
         const user = await Users.findOne({ email: req.params.email });
@@ -90,7 +90,7 @@ router.patch('/deleteFromBasket/:email', async (req, res) => {
     }
 })
 
-
+// Adds book to basket
 router.patch('/addToBasket/:email', async (req, res) => {
     try {
         const user = await Users.findOne({ email: req.params.email });
@@ -112,7 +112,7 @@ router.patch('/addToBasket/:email', async (req, res) => {
     }
 })
 
-
+// Deletes a user
 router.delete('/:email', async (req, res) => {
     try {
         const user = await Users.findOne({ email: req.params.email });

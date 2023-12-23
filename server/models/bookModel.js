@@ -24,7 +24,8 @@ const bookSchema = new mongoose.Schema({
         }
     ],
     coverImage: {
-        type: String
+        type: String,
+        default: "https://www.vhv.rs/dpng/d/463-4633996_book-placeholder-hd-png-download.png"
     }
 });
 

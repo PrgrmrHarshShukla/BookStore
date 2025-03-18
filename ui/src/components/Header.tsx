@@ -1,9 +1,14 @@
+import Menu from "../pages/Menu"
 import SearchBar from "./SearchBar"
 
 function Header(){
     return(
-        <div>
+        <div className="flex flex-row justify-center items-center w-screen">
+            <div>
+                BookStore
+            </div>
             <SearchBar />
+            <Menu />
         </div>
     )
 }
